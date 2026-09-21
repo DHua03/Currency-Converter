@@ -113,5 +113,4 @@ It was later rebuilt as a standalone React + Vite project and expanded with addi
 
 Dylan Hua\
 Computer Science Graduate | Software Engineer\
-
 GitHub: https://github.com/DHua03
