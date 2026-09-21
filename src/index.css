@@ -1,3 +1,4 @@
+/* Global design variables and default light-theme settings. */
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -13,29 +14,40 @@
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
+
+  /* General shadow used for larger UI elements. */
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
   
+    /* Shadow used specifically for the converter card. */
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
+  /* Default fonts used throughout the application. */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
 
+  /* Global text size, line height, and spacing. */
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
+
+  /* Use the light appearance for native browser controls. */
   color-scheme: light;
   color: var(--text);
   background: var(--bg);
+
+  /* Prevent browsers from automatically changing the appearance of text. */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Reduce the default font size on smaller screens. */
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
 
+/* Dark-theme variables applied when the React dark-mode class is enabled. */
 .dark {
   min-height: 100svh;
   background: var(--bg);
@@ -53,15 +65,20 @@
   --accent-bg: rgba(192, 132, 252, 0.15);
   --accent-border: rgba(192, 132, 252, 0.5);
   --social-bg: rgba(47, 48, 58, 0.5);
+
+  /* Dark-theme shadow values. */
   --shadow:
-    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, 
+    rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
+  /* Tell the browser to use dark styling for native controls. */
   color-scheme: dark;
 }
 
-
+/* Legacy system-preference dark mode. This section is currently unused because the application 
+controls dark mode with the React darkMode state instead. */
 /* @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;
@@ -89,10 +106,12 @@
   }
 } */
 
+/* Remove the browser's default body margin. */
 body {
   margin: 0;
 }
 
+/* Main application container. */
 #root {
   width: 1126px;
   max-width: 100%;
@@ -100,11 +119,16 @@ body {
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
+
+  /* Use flexbox for the main application layout. */
   display: flex;
   flex-direction: column;
+
+  /* Include borders and padding within the element's width. */
   box-sizing: border-box;
 }
 
+/* Shared heading styles. */
 h1,
 h2 {
   font-family: var(--heading);
@@ -112,24 +136,33 @@ h2 {
   color: var(--text-h);
 }
 
+/* Main page heading. */
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
+
+  /* Reduce the heading size on smaller screens. */
   @media (max-width: 1024px) {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
+/* Secondary heading style. */
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
+
+  /* Reduce the heading size on smaller screens. */
   @media (max-width: 1024px) {
     font-size: 20px;
   }
 }
+
+/* Remove the default margin from paragraphs. */
 p {
   margin: 0;
 }

@@ -1,3 +1,4 @@
+/* Main currency converter card */
 .converter {
   max-width: 500px;
   margin: 50px auto;
@@ -5,11 +6,13 @@
   background: var(--card-bg);
   border-radius: 12px;
   box-shadow: var(--card-shadow);
+  /* Smoothly transition visual changes when switching themes. */
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
+/* Currency converter heading. */
 .converter h1 {
   margin: 0 0 25px;
   font-size: 36px;
@@ -17,6 +20,7 @@
   text-align: center;
 }
 
+/* Labels above the amount input and currency selectors. */
 .converter label {
   display: block;
   margin-bottom: 6px;
@@ -24,6 +28,7 @@
   font-weight: 500;
 }
 
+/* Keep inputs and dropdowns the same width and sizing. */
 .converter input,
 .converter select {
   width: 100%;
@@ -31,36 +36,42 @@
   box-sizing: border-box;
 }
 
+/* Amount input styling. */
 .converter input {
   border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 16px;
   background: var(--input-bg);
   color: var(--text-h);
+  /* Smoothly transition theme and border changes. */
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease;
 }
 
+/* Currency dropdown styling. */
 .converter select {
   border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 16px;
   background: var(--input-bg);
   color: var(--text-h);
+  /* Smoothly transition theme and border changes. */
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease;
 }
 
+/* Highlight the active input or dropdown for keyboard users. */
 .converter input:focus,
 .converter select:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 
+/* Swap-currency button styling. */
 .currency-row button {
   width: 45px;
   height: 45px;
@@ -71,28 +82,33 @@
   color: var(--text-h);
   font-size: 20px;
   cursor: pointer;
+  /* Smoothly transition button appearance on theme changes. */
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease;
 }
 
+/* Give the swap button visual feedback when hovered. */
 .currency-row button:hover {
   background: var(--input-hover);
   border-color: var(--accent-border);
 }
 
+/* Make interactive buttons easier to identify when using a keyboard. */
 .currency-row button:focus-visible,
 .theme-toggle:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
+/* General spacing and alignment for converter messages. */
 .converter p {
   margin-top: 25px;
   text-align: center;
 }
 
+/* Display the converted amount as the main result. */
 .converted-result {
   margin: 25px 0 0;
   padding: 15px;
@@ -104,6 +120,7 @@
   border: 1px solid var(--border);
 }
 
+/* Arrange the two currency selectors and swap button in one row. */
 .currency-row {
   display: flex;
   align-items: end;
@@ -111,10 +128,12 @@
   margin-top: 10px;
 }
 
+/* Allow each currency selector to share the available space. */
 .currency-row > div {
   flex: 1;
 }
 
+/* Display API error messages to the user. */
 .error-message {
   margin-top: 15px;
   padding: 10px;
@@ -126,6 +145,7 @@
   border-radius: 6px;
 }
 
+/* Display a status message while exchange-rate data is loading. */
 .status-message {
   margin-top: 15px;
   font-size: 16px;
@@ -134,6 +154,7 @@
   color: var(--text);
 }
 
+/* Display the current exchange rate below the conversion result. */
 .exchange-rate {
   margin-top: 10px;
   font-size: 14px;
@@ -142,6 +163,7 @@
   text-align: center;
 }
 
+/* Light/dark mode toggle button. */
 .theme-toggle {
   display: block;
   margin: 0 auto 20px;
@@ -152,37 +174,44 @@
   color: var(--text-h);
   font-size: 14px;
   cursor: pointer;
+  /* Smoothly transition button appearance on theme changes. */
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease;
 }
 
+/* Give the theme button visual feedback when hovered. */
 .theme-toggle:hover {
   background: var(--input-hover);
   border-color: var(--accent-border);
 }
 
+/* Adjust the converter layout for smaller screens. */
 @media (max-width: 600px) {
   .converter {
     margin: 25px 15px;
     padding: 20px;
   }
 
+  /* Stack the currency selectors vertically on mobile screens. */
   .currency-row {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
   }
 
+  /* Center the swap button between the stacked selectors. */
   .currency-row button {
     align-self: center;
   }
   
+  /* Reduce the heading size on smaller screens. */
   .converter h1 {
     font-size: 28px;
   }
 
+  /* Reduce the result text size on smaller screens. */
   .converted-result {
     font-size: 20px;
   }
