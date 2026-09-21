@@ -1,0 +1,189 @@
+.converter {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.converter h1 {
+  margin: 0 0 25px;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.converter label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.converter input,
+.converter select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.converter input {
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 16px;
+  background: var(--input-bg);
+  color: var(--text-h);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.converter select {
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 16px;
+  background: var(--input-bg);
+  color: var(--text-h);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.converter input:focus,
+.converter select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.currency-row button {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text-h);
+  font-size: 20px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.currency-row button:hover {
+  background: var(--input-hover);
+  border-color: var(--accent-border);
+}
+
+.currency-row button:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.converter p {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.converted-result {
+  margin: 25px 0 0;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+}
+
+.currency-row {
+  display: flex;
+  align-items: end;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.currency-row > div {
+  flex: 1;
+}
+
+.error-message {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--error-text);
+  background: var(--error-bg);
+  border-radius: 6px;
+}
+
+.status-message {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  color: var(--text);
+}
+
+.exchange-rate {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--text);
+  text-align: center;
+}
+
+.theme-toggle {
+  display: block;
+  margin: 0 auto 20px;
+  padding: 8px 14px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text-h);
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--input-hover);
+  border-color: var(--accent-border);
+}
+
+@media (max-width: 600px) {
+  .converter {
+    margin: 25px 15px;
+    padding: 20px;
+  }
+
+  .currency-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .currency-row button {
+    align-self: center;
+  }
+  
+  .converter h1 {
+    font-size: 28px;
+  }
+
+  .converted-result {
+    font-size: 20px;
+  }
+}
